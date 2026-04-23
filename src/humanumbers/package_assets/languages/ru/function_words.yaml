@@ -1,0 +1,44 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: ru
+  name: Russian
+  native_name: Русский
+  scripts: [Cyrl]
+pack_kind: function_word_dictionary
+notes:
+  - Grouped parser-facing words for approximation, bounds, ranges, prepositions, and neutral discourse noise.
+  - Intended to keep stop-token and synonym expansion outside named_values and unit policy packs.
+groups:
+  approximation: [около, примерно, приблизительно, ориентировочно, порядка, в районе, в пределах, почти, без малого, практически, фактически, грубо, условно, навскидку, округленно, в среднем, приближенно, что-то около, где-то, чуть меньше, чуть больше, примерно на уровне, ориентировочно на, приблизительно на, более или менее]
+  approximation_neutral: [около, примерно, приблизительно, ориентировочно, порядка, в среднем, приближенно, ориентировочно на уровне, приблизительно на уровне, плюс-минус]
+  approximation_rough: [где-то, что-то около, в районе, примерно так, навскидку, грубо говоря, более или менее, плюс-минус, на глаз, в общих чертах, что-то типа, считай]
+  approximation_very_rough: [грубо, на глазок, с потолка, если по-простому, если совсем грубо, на вскидку, плюс-минус лапоть, что-то в духе, хрен знает, но где-то]
+  lower_bound: [не менее, как минимум, минимум, от, начиная с, начиная от, свыше, больше, более, выше, по меньшей мере, хотя бы, не ниже, самое малое, не меньше, не меньше чем, больше чем, выше чем, от уровня, от минимум]
+  upper_bound: [не более, максимум, как максимум, до, менее, меньше, ниже, не выше, не превышая, самое большее, не больше, не больше чем, меньше чем, ниже чем, вплоть до, до уровня, ограничиваясь, не свыше, потолок, пределом]
+  range: [между, от, до, от и до, в диапазоне, в интервале, в пределах, в рамках, заканчивая, в коридоре, в границах, между примерно, от примерно, до примерно, где-то между, от около, до около, между приблизительно, растягиваясь от, колеблясь между]
+  exactness: [ровно, точно, именно, аккурат, строго, буквально, конкретно, четко, непосредственно, точь-в-точь, в точности, как раз, равно, эквивалентно, строго на, ровно на, точно на уровне, без отклонений, однозначно, напрямую]
+  connectors: [и, плюс, с, вместе с, а также, наряду с, включая, добавляя, дополнительно к, в сочетании с, или, либо, иначе, альтернативно, вместо, взамен, против, но, однако, хотя, тогда как, при этом, тем не менее, вместе с тем, зато]
+  prepositions: [в, во, на, с, со, к, ко, у, от, из, изо, до, по, для, при, через, сквозь, между, среди, около, возле, рядом с, над, под, перед, после, внутри, вне, вокруг, вдоль, напротив, вопреки, согласно, относительно, касательно, насчет, без, вместе с, помимо, кроме]
+  discourse: [вообще, обычно, как правило, в целом, в общем, по сути, реально, просто, главным образом, преимущественно, например, скажем, допустим, то есть, а именно, в частности, особенно, прежде всего, в принципе, на практике, по факту, собственно, грубо говоря, формально, условно говоря, скорее, по большому счету, по существу, в среднем, ну]
+  benchmark_profane_suffix: [", бля", ", черт побери", ", мать его", ", ё-моё"]
+  near_upper_templates: ["почти {label}", "без малого {label}", "под {label} уже", "ну почти {label}", "практически {label}"]
+  near_upper_profane_templates: ["почти {label}, бля", "ну почти {label}, черт", "считай {label}, мать его"]
+  same_unit_range_templates: ["в пределах {low}-{high} {unit_form}", "что-то типа {low}-{high} {unit_form}", "где-то между {low} и {high} {unit_form}", "если грубо, то {low}-{high} {unit_form}"]
+  same_unit_range_profane_templates: ["дохрена, но где-то {low}-{high} {unit_form}", "хрен его знает, но примерно {low}-{high} {unit_form}", "ну где-то {low}-{high} {unit_form}, бля"]
+  coarse_calendar_month_templates: [примерно месяц, около месяца, почти целый месяц, где-то с месяц, считай месяц]
+  tiny_percentage_templates: ["около {rounded} процента", "десятые доли процента", "совсем крошечный процент", "практически следовой процент"]
+  count_thousand_templates: ["около {thousands} тысячи", "тысяча с хвостиком", "больше тысячи штук", "что-то около тысячи"]
+  count_thousand_profane_templates: ["ну, тысяча с хером", "считай, тысяча с лишним", "что-то под тысячу, бля"]
+  count_million_templates: [почти миллион, без малого миллион, "около {millions} миллиона", считай миллион]
+  count_million_profane_templates: ["считай миллион, бля", "почти миллион, черт", "ну прям миллион почти, блин"]
+  additive_bucket_templates: ["{bucket_phrase} {connector} {remainder_quantity}", "{major} с копейками {short_unit}", "{major} с хвостиком {short_unit}"]
+  decimal_anchor_small_tail_words: [немного, чуть-чуть, самую малость]
+  decimal_anchor_above_templates: ["{anchor_short} с небольшим", "{anchor_short} с хвостиком", "{anchor_words} и {tail_descriptor}"]
+  decimal_anchor_above_tail_templates: ["{anchor_words} и {tail_text}", "{anchor_short} и {tail_text}"]
+  decimal_anchor_below_templates: ["почти {anchor_words}", "без малого {anchor_words}", "практически {anchor_short}"]
+  decimal_anchor_tail_templates: ["несколько {bucket_text}", "{upper_tail}", "{rounded_tail}"]
+derived_sets:
+  composition.stop_token_groups: [approximation, prepositions, discourse]
+  comparison.bound_groups: [lower_bound, upper_bound, range, exactness]

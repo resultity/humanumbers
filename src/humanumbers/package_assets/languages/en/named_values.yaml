@@ -1,0 +1,43 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: en
+  name: English
+  native_name: English
+  scripts: [Latn]
+model: split_core_language
+basic_aliases:
+  exact.pair: [pair, a pair]
+  fraction.tenth: [tenth, one tenth]
+  fraction.quarter: [quarter, a quarter, one quarter]
+  fraction.third: [third, a third, one third]
+  fraction.half: [half, a half]
+  fraction.three_quarters: [three quarters]
+  exact_group.dozen: [dozen, a dozen, one dozen]
+  scale_bucket.tens: [tens]
+  scale_bucket.hundreds: [hundreds]
+  scale_bucket.thousands: [thousands]
+  scale_base.thousand: [thousand]
+  scale_base.ten_thousand: [ten thousand]
+  scale_base.million: [million]
+composition:
+  order: [left, right]
+  joiners:
+    multiplier_on_scale_base: [of]
+    bucket_on_scale_base: [of]
+    multiplier_on_unit: [of, of a]
+    bucket_on_unit: [of]
+  starter_examples:
+    - surface: quarter million
+      rule: multiplier_on_scale_base
+      left_id: fraction.quarter
+      right_key: scale_base.million
+    - surface: hundreds of thousands
+      rule: bucket_on_scale_base
+      left_id: scale_bucket.hundreds
+      right_key: scale_base.thousand
+    - surface: tenth of a percent
+      rule: multiplier_on_unit
+      left_id: fraction.tenth
+      unit_key: percent

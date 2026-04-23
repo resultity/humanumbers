@@ -1,0 +1,182 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+pack_kind: scalar_composites
+classes:
+  additive_fraction:
+    description: exact fractions attachable to a whole quantity in the same unit
+  exact_collective:
+    description: exact multiplicative named amounts
+  decimal_power_base:
+    description: exact powers of ten used for same-order rounding or additive decomposition
+  decimal_power_bucket:
+    description: approximate multiplicative buckets built on powers of ten
+
+values:
+  fraction.thousandth:
+    class: additive_fraction
+    exact_value: 0.001
+    numerator: 1
+    denominator: 1000
+    combine_with_whole: true
+  fraction.hundredth:
+    class: additive_fraction
+    exact_value: 0.01
+    numerator: 1
+    denominator: 100
+    combine_with_whole: true
+  fraction.tenth:
+    class: additive_fraction
+    exact_value: 0.1
+    numerator: 1
+    denominator: 10
+    combine_with_whole: true
+  fraction.quarter:
+    class: additive_fraction
+    exact_value: 0.25
+    numerator: 1
+    denominator: 4
+    combine_with_whole: true
+  fraction.third:
+    class: additive_fraction
+    exact_value: 0.3333333333
+    numerator: 1
+    denominator: 3
+    combine_with_whole: true
+  fraction.half:
+    class: additive_fraction
+    exact_value: 0.5
+    numerator: 1
+    denominator: 2
+    combine_with_whole: true
+  fraction.three_quarters:
+    class: additive_fraction
+    exact_value: 0.75
+    numerator: 3
+    denominator: 4
+    combine_with_whole: true
+
+  exact.pair:
+    class: exact_collective
+    exact_value: 2
+  exact.triple:
+    class: exact_collective
+    exact_value: 3
+  exact.dozen:
+    class: exact_collective
+    exact_value: 12
+  exact.score:
+    class: exact_collective
+    exact_value: 20
+
+  power.ten:
+    class: decimal_power_base
+    exact_value: 10
+    order10: 1
+  power.hundred:
+    class: decimal_power_base
+    exact_value: 100
+    order10: 2
+  power.thousand:
+    class: decimal_power_base
+    exact_value: 1000
+    order10: 3
+  power.ten_thousand:
+    class: decimal_power_base
+    exact_value: 10000
+    order10: 4
+  power.hundred_thousand:
+    class: decimal_power_base
+    exact_value: 100000
+    order10: 5
+  power.million:
+    class: decimal_power_base
+    exact_value: 1000000
+    order10: 6
+  power.ten_million:
+    class: decimal_power_base
+    exact_value: 10000000
+    order10: 7
+  power.hundred_million:
+    class: decimal_power_base
+    exact_value: 100000000
+    order10: 8
+  power.billion:
+    class: decimal_power_base
+    exact_value: 1000000000
+    order10: 9
+  power.ten_billion:
+    class: decimal_power_base
+    exact_value: 10000000000
+    order10: 10
+  power.hundred_billion:
+    class: decimal_power_base
+    exact_value: 100000000000
+    order10: 11
+
+  bucket.tens:
+    class: decimal_power_bucket
+    base_value: 10
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.hundreds:
+    class: decimal_power_bucket
+    base_value: 100
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.thousands:
+    class: decimal_power_bucket
+    base_value: 1000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.tens_of_thousands:
+    class: decimal_power_bucket
+    base_value: 10000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.hundreds_of_thousands:
+    class: decimal_power_bucket
+    base_value: 100000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.millions:
+    class: decimal_power_bucket
+    base_value: 1000000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.tens_of_millions:
+    class: decimal_power_bucket
+    base_value: 10000000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.hundreds_of_millions:
+    class: decimal_power_bucket
+    base_value: 100000000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.billions:
+    class: decimal_power_bucket
+    base_value: 1000000000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.tens_of_billions:
+    class: decimal_power_bucket
+    base_value: 10000000000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5
+  bucket.hundreds_of_billions:
+    class: decimal_power_bucket
+    base_value: 100000000000
+    min_multiplier: 1.5
+    max_multiplier: 12
+    anchor_multiplier: 5

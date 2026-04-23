@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humanumbers"
+version = "0.1.0"
+description = "Prototype numeric humanization API built on normalized assets"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115.12",
+  "uvicorn>=0.34.2",
+  "pydantic>=2.11.3",
+  "PyYAML>=6.0.2",
+  "rapidfuzz>=3.13.0",
+  "num2words>=0.5.14",
+  "orjson>=3.10.16",
+  "pymorphy3>=2.0.3",
+  "pymorphy3-dicts-ru>=2.4.417150.4580142"
+]
+
+[project.scripts]
+humanumbers-api = "humanumbers.app:main"
+humanumbers-mcp = "humanumbers.mcp_server:main"
+
+[project.optional-dependencies]
+en = ["inflect>=7.5.0"]
+zh = ["jieba>=0.42.1", "opencc-python-reimplemented>=0.1.7"]
+ar = ["camel-tools>=1.5.7"]
+hi = ["indic-nlp-library>=0.92"]
+bn = ["indic-nlp-library>=0.92"]
+ur = ["urduhack>=1.1.1"]
+mcp = ["mcp>=1.0.0"]
+demo = ["openai>=1.76.0", "mcp>=1.0.0"]
+dev = ["httpx>=0.28.1"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]

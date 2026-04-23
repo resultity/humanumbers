@@ -1,0 +1,439 @@
+# Runtime phrase packs used by humanize/benchmark sentence templates.
+#
+# Schema:
+# - default_language: fallback language code
+# - packs.<language_code>: mapping with phrase templates and descriptor bands
+# - band_descriptors: ordered from tiny to huge magnitude
+version: 1
+default_language: en
+packs:
+  ru:
+    code: ru
+    word_separator: ' '
+    about_fallback: около
+    nearly_template: почти {unit}
+    less_than_template: меньше {unit}
+    range_template: в пределах {low}-{high} {unit}
+    level_match_template: примерно на уровне {reference}
+    almost_like_template: почти как {reference}
+    percent_lower_template: примерно на {pct}% ниже {reference}
+    percent_higher_template: примерно на {pct}% выше {reference}
+    ratio_more_template: примерно в {multiplier} раза больше, чем {reference}
+    ratio_less_template: примерно в {multiplier} раз меньше, чем {reference}
+    relative_more_template: заметно больше, чем {reference}
+    relative_less_template: заметно меньше, чем {reference}
+    absolute_higher_template: на {delta} выше
+    absolute_lower_template: на {delta} ниже
+    scale_lower_template: это {descriptor} на фоне {reference}
+    scale_higher_template: это {descriptor} относительно {reference}
+    scale_lower_alt_template: рядом с {reference} это {descriptor}
+    scale_higher_alt_template: рядом с {reference} это уже {descriptor}
+    band_descriptors:
+    - пыль
+    - след
+    - крошки
+    - крошечно
+    - очень мало
+    - немного
+    - небольшое
+    - заметная часть
+    - не так уж далеко
+    - чуть меньше
+    - примерно столько же
+    - чуть больше
+    - немного больше
+    - заметно больше
+    - намного больше
+    - в разы больше
+    - очень много
+    - огромно
+    - колоссально
+    - экстремально
+    - запредельно
+  en:
+    code: en
+    word_separator: ' '
+    about_fallback: about
+    nearly_template: nearly {unit}
+    less_than_template: less than {unit}
+    range_template: between {low} and {high} {unit}
+    level_match_template: about on the level of {reference}
+    almost_like_template: almost like {reference}
+    percent_lower_template: about {pct}% lower than {reference}
+    percent_higher_template: about {pct}% higher than {reference}
+    ratio_more_template: about {multiplier} times more than {reference}
+    ratio_less_template: about {multiplier} times less than {reference}
+    relative_more_template: noticeably more than {reference}
+    relative_less_template: noticeably less than {reference}
+    absolute_higher_template: '{delta} higher'
+    absolute_lower_template: '{delta} lower'
+    scale_lower_template: that is {descriptor} compared with {reference}
+    scale_higher_template: that is {descriptor} relative to {reference}
+    scale_lower_alt_template: against {reference}, it is {descriptor}
+    scale_higher_alt_template: compared with {reference}, it is {descriptor}
+    band_descriptors:
+    - dust
+    - trace
+    - crumbs
+    - tiny
+    - very little
+    - a little
+    - smallish
+    - a noticeable share
+    - not far off
+    - a touch under
+    - about the same
+    - a touch over
+    - a bit more
+    - noticeably more
+    - much more
+    - several times more
+    - a lot
+    - huge
+    - colossal
+    - extreme
+    - off the charts
+  es:
+    code: es
+    word_separator: ' '
+    about_fallback: alrededor de
+    nearly_template: casi {unit}
+    less_than_template: menos de {unit}
+    range_template: entre {low} y {high} {unit}
+    level_match_template: aproximadamente al nivel de {reference}
+    almost_like_template: casi como {reference}
+    percent_lower_template: aproximadamente un {pct}% por debajo de {reference}
+    percent_higher_template: aproximadamente un {pct}% por encima de {reference}
+    ratio_more_template: aproximadamente {multiplier} veces más que {reference}
+    ratio_less_template: aproximadamente {multiplier} veces menos que {reference}
+    relative_more_template: notablemente más que {reference}
+    relative_less_template: notablemente menos que {reference}
+    absolute_higher_template: '{delta} por encima'
+    absolute_lower_template: '{delta} por debajo'
+    scale_lower_template: eso es {descriptor} frente a {reference}
+    scale_higher_template: eso es {descriptor} respecto de {reference}
+    scale_lower_alt_template: comparado con {reference}, es {descriptor}
+    scale_higher_alt_template: en comparación con {reference}, es {descriptor}
+    band_descriptors:
+    - polvo
+    - rastro
+    - migajas
+    - diminuto
+    - muy poco
+    - un poco
+    - pequeño
+    - una parte visible
+    - no tan lejos
+    - un poco por debajo
+    - más o menos lo mismo
+    - un poco por encima
+    - algo más
+    - bastante más
+    - mucho más
+    - varias veces más
+    - un montón
+    - enorme
+    - colosal
+    - extremo
+    - fuera de escala
+  fr:
+    code: fr
+    word_separator: ' '
+    about_fallback: environ
+    nearly_template: presque {unit}
+    less_than_template: moins de {unit}
+    range_template: entre {low} et {high} {unit}
+    level_match_template: à peu près au niveau de {reference}
+    almost_like_template: presque comme {reference}
+    percent_lower_template: environ {pct}% en dessous de {reference}
+    percent_higher_template: environ {pct}% au-dessus de {reference}
+    ratio_more_template: environ {multiplier} fois plus que {reference}
+    ratio_less_template: environ {multiplier} fois moins que {reference}
+    relative_more_template: nettement plus que {reference}
+    relative_less_template: nettement moins que {reference}
+    absolute_higher_template: '{delta} au-dessus'
+    absolute_lower_template: '{delta} en dessous'
+    scale_lower_template: c'est {descriptor} par rapport à {reference}
+    scale_higher_template: c'est {descriptor} relativement à {reference}
+    scale_lower_alt_template: face à {reference}, c'est {descriptor}
+    scale_higher_alt_template: comparé à {reference}, c'est {descriptor}
+    band_descriptors:
+    - poussière
+    - trace
+    - miettes
+    - minuscule
+    - très peu
+    - un peu
+    - petit
+    - une part visible
+    - pas si loin
+    - un peu en dessous
+    - à peu près pareil
+    - un peu au-dessus
+    - un peu plus
+    - nettement plus
+    - beaucoup plus
+    - plusieurs fois plus
+    - énorme
+    - immense
+    - colossal
+    - extrême
+    - hors échelle
+  pt:
+    code: pt
+    word_separator: ' '
+    about_fallback: cerca de
+    nearly_template: quase {unit}
+    less_than_template: menos de {unit}
+    range_template: entre {low} e {high} {unit}
+    level_match_template: aproximadamente no nível de {reference}
+    almost_like_template: quase como {reference}
+    percent_lower_template: cerca de {pct}% abaixo de {reference}
+    percent_higher_template: cerca de {pct}% acima de {reference}
+    ratio_more_template: cerca de {multiplier} vezes mais que {reference}
+    ratio_less_template: cerca de {multiplier} vezes menos que {reference}
+    relative_more_template: visivelmente mais que {reference}
+    relative_less_template: visivelmente menos que {reference}
+    absolute_higher_template: '{delta} acima'
+    absolute_lower_template: '{delta} abaixo'
+    scale_lower_template: isso é {descriptor} em relação a {reference}
+    scale_higher_template: isso é {descriptor} relativamente a {reference}
+    scale_lower_alt_template: comparado com {reference}, é {descriptor}
+    scale_higher_alt_template: em comparação com {reference}, é {descriptor}
+    band_descriptors:
+    - poeira
+    - traço
+    - migalhas
+    - minúsculo
+    - muito pouco
+    - um pouco
+    - pequeno
+    - uma parte visível
+    - não tão longe
+    - um pouco abaixo
+    - quase o mesmo
+    - um pouco acima
+    - um pouco mais
+    - bem mais
+    - muito mais
+    - várias vezes mais
+    - um monte
+    - enorme
+    - colossal
+    - extremo
+    - fora da escala
+  zh:
+    code: zh
+    word_separator: ''
+    about_fallback: 大约
+    nearly_template: 接近{unit}
+    less_than_template: 不到{unit}
+    range_template: 大约在{low}到{high}{unit}之间
+    level_match_template: 大致和{reference}同一水平
+    almost_like_template: 几乎和{reference}一样
+    percent_lower_template: 大约比{reference}低{pct}%
+    percent_higher_template: 大约比{reference}高{pct}%
+    ratio_more_template: 大约是{reference}的{multiplier}倍
+    ratio_less_template: 大约只有{reference}的1/{multiplier}
+    relative_more_template: 明显高于{reference}
+    relative_less_template: 明显低于{reference}
+    absolute_higher_template: 高出{delta}
+    absolute_lower_template: 低了{delta}
+    scale_lower_template: 相对{reference}，这几乎只是{descriptor}
+    scale_higher_template: 相对{reference}，这已经是{descriptor}
+    scale_lower_alt_template: 拿{reference}作比较，这只是{descriptor}
+    scale_higher_alt_template: 拿{reference}作比较，这已经是{descriptor}
+    band_descriptors:
+    - 一点灰
+    - 一点痕
+    - 零碎
+    - 很小
+    - 很少
+    - 有一点
+    - 偏小
+    - 有点分量
+    - 差得不远
+    - 略少
+    - 差不多
+    - 略多
+    - 多一点
+    - 明显更多
+    - 多得多
+    - 好几倍
+    - 很多
+    - 巨大
+    - 夸张
+    - 极端
+    - 离谱
+  ar:
+    code: ar
+    word_separator: ' '
+    about_fallback: حوالي
+    nearly_template: يقارب {unit}
+    less_than_template: أقل من {unit}
+    range_template: بين {low} و{high} {unit}
+    level_match_template: تقريباً على مستوى {reference}
+    almost_like_template: يكاد يكون مثل {reference}
+    percent_lower_template: أقل من {reference} بنحو {pct}%
+    percent_higher_template: أعلى من {reference} بنحو {pct}%
+    ratio_more_template: أكبر من {reference} بنحو {multiplier} مرة
+    ratio_less_template: أقل من {reference} بنحو {multiplier} مرة
+    relative_more_template: أكثر بوضوح من {reference}
+    relative_less_template: أقل بوضوح من {reference}
+    absolute_higher_template: أعلى بمقدار {delta}
+    absolute_lower_template: أدنى بمقدار {delta}
+    scale_lower_template: هذا {descriptor} مقارنةً بـ {reference}
+    scale_higher_template: هذا {descriptor} نسبةً إلى {reference}
+    scale_lower_alt_template: مقابل {reference} فهو {descriptor}
+    scale_higher_alt_template: إذا قورن بـ {reference} فهو {descriptor}
+    band_descriptors:
+    - ذرة غبار
+    - أثر
+    - فتات
+    - ضئيل جداً
+    - قليل جداً
+    - قليل
+    - صغير
+    - جزء ملحوظ
+    - ليس بعيداً
+    - أقل قليلاً
+    - تقريباً نفس الشيء
+    - أكثر قليلاً
+    - أكثر بقليل
+    - أكثر بوضوح
+    - أكثر بكثير
+    - أكثر بعدة مرات
+    - كثير جداً
+    - هائل
+    - عملاق
+    - متطرف
+    - خارج المقياس
+  hi:
+    code: hi
+    word_separator: ' '
+    about_fallback: लगभग
+    nearly_template: लगभग {unit}
+    less_than_template: '{unit} से कम'
+    range_template: '{low} से {high} {unit} के बीच'
+    level_match_template: लगभग {reference} के स्तर पर
+    almost_like_template: लगभग {reference} जैसा
+    percent_lower_template: '{reference} से लगभग {pct}% कम'
+    percent_higher_template: '{reference} से लगभग {pct}% अधिक'
+    ratio_more_template: '{reference} से लगभग {multiplier} गुना अधिक'
+    ratio_less_template: '{reference} से लगभग {multiplier} गुना कम'
+    relative_more_template: '{reference} से साफ़ तौर पर अधिक'
+    relative_less_template: '{reference} से साफ़ तौर पर कम'
+    absolute_higher_template: '{delta} अधिक'
+    absolute_lower_template: '{delta} कम'
+    scale_lower_template: '{reference} के मुकाबले यह {descriptor} है'
+    scale_higher_template: '{reference} की तुलना में यह {descriptor} है'
+    scale_lower_alt_template: '{reference} के सामने यह बस {descriptor} है'
+    scale_higher_alt_template: '{reference} के सामने यह पूरा {descriptor} है'
+    band_descriptors:
+    - धूल बराबर
+    - निशान भर
+    - चुटकी भर
+    - नन्हा
+    - बहुत कम
+    - थोड़ा
+    - छोटा
+    - काफ़ी हिस्सा
+    - ज़्यादा दूर नहीं
+    - थोड़ा कम
+    - लगभग उतना ही
+    - थोड़ा ज़्यादा
+    - कुछ ज़्यादा
+    - काफ़ी ज़्यादा
+    - बहुत ज़्यादा
+    - कई गुना
+    - ढेर
+    - विशाल
+    - विराट
+    - चरम
+    - हद से बाहर
+  bn:
+    code: bn
+    word_separator: ' '
+    about_fallback: প্রায়
+    nearly_template: প্রায় {unit}
+    less_than_template: '{unit} এর কম'
+    range_template: '{low} থেকে {high} {unit} এর মধ্যে'
+    level_match_template: মোটামুটি {reference} এর সমান স্তরে
+    almost_like_template: প্রায় {reference} এর মতো
+    percent_lower_template: '{reference} এর তুলনায় প্রায় {pct}% কম'
+    percent_higher_template: '{reference} এর তুলনায় প্রায় {pct}% বেশি'
+    ratio_more_template: '{reference} এর তুলনায় প্রায় {multiplier} গুণ বেশি'
+    ratio_less_template: '{reference} এর তুলনায় প্রায় {multiplier} গুণ কম'
+    relative_more_template: '{reference} এর চেয়ে স্পষ্টত বেশি'
+    relative_less_template: '{reference} এর চেয়ে স্পষ্টত কম'
+    absolute_higher_template: '{delta} বেশি'
+    absolute_lower_template: '{delta} কম'
+    scale_lower_template: '{reference} এর তুলনায় এটা {descriptor}'
+    scale_higher_template: '{reference} এর তুলনায় এটা {descriptor}'
+    scale_lower_alt_template: '{reference} এর পাশে এটা শুধু {descriptor}'
+    scale_higher_alt_template: '{reference} এর পাশে এটা পুরো {descriptor}'
+    band_descriptors:
+    - ধুলোর মতো
+    - চিহ্নমাত্র
+    - কণা
+    - খুবই ছোট
+    - খুব কম
+    - অল্প
+    - ছোটখাটো
+    - চোখে পড়ার মতো অংশ
+    - এত দূরে নয়
+    - একটু কম
+    - মোটামুটি সমান
+    - একটু বেশি
+    - কিছুটা বেশি
+    - স্পষ্টত বেশি
+    - অনেক বেশি
+    - কয়েক গুণ বেশি
+    - ঢের বেশি
+    - বিশাল
+    - বিরাট
+    - চরম
+    - স্কেলের বাইরে
+  ur:
+    code: ur
+    word_separator: ' '
+    about_fallback: تقریباً
+    nearly_template: تقریباً {unit}
+    less_than_template: '{unit} سے کم'
+    range_template: '{low} سے {high} {unit} کے درمیان'
+    level_match_template: تقریباً {reference} کی سطح پر
+    almost_like_template: تقریباً {reference} جیسا
+    percent_lower_template: '{reference} سے تقریباً {pct}% کم'
+    percent_higher_template: '{reference} سے تقریباً {pct}% زیادہ'
+    ratio_more_template: '{reference} سے تقریباً {multiplier} گنا زیادہ'
+    ratio_less_template: '{reference} سے تقریباً {multiplier} گنا کم'
+    relative_more_template: '{reference} سے واضح طور پر زیادہ'
+    relative_less_template: '{reference} سے واضح طور پر کم'
+    absolute_higher_template: '{delta} زیادہ'
+    absolute_lower_template: '{delta} کم'
+    scale_lower_template: '{reference} کے مقابلے میں یہ {descriptor} ہے'
+    scale_higher_template: '{reference} کے لحاظ سے یہ {descriptor} ہے'
+    scale_lower_alt_template: '{reference} کے سامنے یہ بس {descriptor} ہے'
+    scale_higher_alt_template: '{reference} کے سامنے یہ پورا {descriptor} ہے'
+    band_descriptors:
+    - گرد برابر
+    - نشان بھر
+    - ذرے
+    - بہت ننھا
+    - بہت کم
+    - تھوڑا
+    - چھوٹا سا
+    - نمایاں حصہ
+    - اتنا دور نہیں
+    - کچھ کم
+    - تقریباً برابر
+    - کچھ زیادہ
+    - ذرا زیادہ
+    - واضح طور پر زیادہ
+    - بہت زیادہ
+    - کئی گنا زیادہ
+    - ڈھیر
+    - بہت بڑا
+    - دیوہیکل
+    - انتہائی
+    - حد سے باہر

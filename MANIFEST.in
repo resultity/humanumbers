@@ -1,0 +1,11 @@
+recursive-include src/humanumbers/package_assets *.yaml
+prune tests
+prune demo
+prune chat_mcp_demo
+prune ws
+prune docs
+prune dumps
+prune examples
+prune assets
+prune scripts
+global-exclude __pycache__ *.py[cod]

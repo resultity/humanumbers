@@ -1,0 +1,74 @@
+# Python bytecode and caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+**/.pytest_cache/
+.mypy_cache/
+**/.mypy_cache/
+.ruff_cache/
+**/.ruff_cache/
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments, including nested ones and suffixed names like venv-1
+.venv/
+.venv-*/
+venv/
+venv-*/
+env/
+env-*/
+ENV/
+**/.venv*/
+**/[Vv]env*/
+**/[Ee]nv*/
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Packaging and build outputs
+build/
+dist/
+site/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.whl
+*.tar.gz
+
+# Tooling state
+.python-version
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.DS_Store
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# Demo-generated reports
+demo/mcp/*_report*.md
+demo/tool/*_report*.md
+dumps/
+
+# Frontend artifacts
+ws/node_modules/
+ws/dist/
+ws/.vercel/
+
+ws/ 
+scripts/
+assets/
+examples/
+dumps/
+chat_mcp_demo/
+tests/

@@ -1,0 +1,40 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+pack_kind: composite_rules
+status: legacy_reference_not_loaded
+notes:
+  - Kept for historical/reference purposes while runtime uses direct candidate generation in service.py.
+  - Not loaded by src/humanumbers/assets.py in the current architecture.
+rules:
+  multiplier_on_scale_base:
+    left_categories: [exact_scalar, exact_fraction, exact_group]
+    right_categories: [scale_base]
+    output:
+      mode: multiply
+
+  bucket_on_scale_base:
+    left_categories: [scale_bucket]
+    right_categories: [scale_base]
+    output:
+      mode: range_multiply
+
+  multiplier_on_unit:
+    left_categories: [exact_scalar, exact_fraction, exact_group]
+    right_categories: [unit]
+    output:
+      mode: unit_multiply
+
+  bucket_on_unit:
+    left_categories: [scale_bucket]
+    right_categories: [unit]
+    output:
+      mode: unit_range
+
+runtime_hints:
+  max_parts: 2
+  no_recursive_rules: true
+  fast_path:
+    - basic_alias_only
+    - basic_alias_plus_scale_base
+    - basic_alias_plus_unit

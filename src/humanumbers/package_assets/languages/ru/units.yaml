@@ -1,0 +1,127 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: ru
+  name: Russian
+pack_kind: normalized_unit_policies
+notes:
+  - This pack stores what kinds of composites are natural in Russian for each family or unit.
+  - It does not store wordforms or morphology.
+
+defaults:
+  additive_fraction: allowed
+  exact_collective: forbidden
+  decimal_power_bucket: allowed
+  decimal_base_rounding: allowed
+  upper_unit_jump_max: 1
+  lower_unit_jump_max: 0
+
+families:
+  count:
+    default:
+      additive_fraction: preferred
+      exact_collective: preferred
+      decimal_power_bucket: preferred
+      decimal_base_rounding: preferred
+      upper_unit_jump_max: 0
+      lower_unit_jump_max: 0
+
+  length:
+    default:
+      additive_fraction: allowed
+      exact_collective: forbidden
+      decimal_power_bucket: preferred
+      decimal_base_rounding: preferred
+      upper_unit_jump_max: 1
+      lower_unit_jump_max: 1
+    unit_overrides:
+      nanometer: {additive_fraction: discouraged, decimal_power_bucket: discouraged}
+      micrometer: {additive_fraction: discouraged, decimal_power_bucket: discouraged}
+      millimeter: {additive_fraction: discouraged, decimal_power_bucket: preferred}
+      centimeter: {additive_fraction: discouraged, decimal_power_bucket: preferred, upper_unit_jump_max: 1}
+      meter: {additive_fraction: preferred, decimal_power_bucket: preferred, upper_unit_jump_max: 1}
+      kilometer: {additive_fraction: discouraged, decimal_power_bucket: allowed, upper_unit_jump_max: 0}
+      inch: {additive_fraction: preferred, decimal_power_bucket: allowed, preserve_input_system_default: true, upper_unit_jump_max: 1}
+      foot: {additive_fraction: preferred, decimal_power_bucket: allowed, preserve_input_system_default: true, upper_unit_jump_max: 1}
+      mile: {additive_fraction: discouraged, decimal_power_bucket: allowed, preserve_input_system_default: true, upper_unit_jump_max: 0}
+
+  mass:
+    default:
+      additive_fraction: allowed
+      exact_collective: forbidden
+      decimal_power_bucket: preferred
+      decimal_base_rounding: preferred
+      upper_unit_jump_max: 1
+      lower_unit_jump_max: 1
+    unit_overrides:
+      milligram: {additive_fraction: discouraged, decimal_power_bucket: discouraged}
+      gram: {additive_fraction: discouraged, decimal_power_bucket: preferred, upper_unit_jump_max: 1}
+      kilogram: {additive_fraction: preferred, decimal_power_bucket: preferred, upper_unit_jump_max: 1}
+      tonne: {additive_fraction: preferred, decimal_power_bucket: preferred, upper_unit_jump_max: 0}
+      ounce: {additive_fraction: allowed, decimal_power_bucket: allowed, preserve_input_system_default: true}
+      troy_ounce: {additive_fraction: allowed, decimal_power_bucket: discouraged, preserve_input_system_default: true}
+      pound: {additive_fraction: allowed, decimal_power_bucket: allowed, preserve_input_system_default: true}
+      carat: {additive_fraction: discouraged, decimal_power_bucket: discouraged, preserve_input_system_default: true}
+
+  time:
+    default:
+      additive_fraction: preferred
+      exact_collective: discouraged
+      decimal_power_bucket: discouraged
+      decimal_base_rounding: allowed
+      upper_unit_jump_max: 1
+      lower_unit_jump_max: 0
+    unit_overrides:
+      nanosecond: {additive_fraction: discouraged, decimal_power_bucket: forbidden}
+      microsecond: {additive_fraction: discouraged, decimal_power_bucket: forbidden}
+      millisecond: {additive_fraction: discouraged, decimal_power_bucket: discouraged}
+      second: {additive_fraction: discouraged, decimal_power_bucket: discouraged}
+      minute: {additive_fraction: allowed, decimal_power_bucket: discouraged}
+      hour: {additive_fraction: preferred, decimal_power_bucket: discouraged}
+      day: {additive_fraction: preferred, exact_collective: allowed, decimal_power_bucket: discouraged}
+      week: {additive_fraction: preferred, exact_collective: preferred, decimal_power_bucket: forbidden}
+      month: {additive_fraction: preferred, exact_collective: allowed, decimal_power_bucket: forbidden}
+      year: {additive_fraction: allowed, exact_collective: discouraged, decimal_power_bucket: forbidden}
+
+  volume:
+    default:
+      additive_fraction: preferred
+      exact_collective: forbidden
+      decimal_power_bucket: allowed
+      decimal_base_rounding: preferred
+      upper_unit_jump_max: 1
+      lower_unit_jump_max: 1
+    unit_overrides:
+      milliliter: {additive_fraction: discouraged, decimal_power_bucket: preferred}
+      liter: {additive_fraction: preferred, decimal_power_bucket: allowed}
+      gallon: {additive_fraction: allowed, decimal_power_bucket: allowed, preserve_input_system_default: true}
+
+  percentage:
+    default:
+      additive_fraction: preferred
+      exact_collective: forbidden
+      decimal_power_bucket: allowed
+      decimal_base_rounding: preferred
+      upper_unit_jump_max: 0
+      lower_unit_jump_max: 0
+    unit_overrides:
+      basis_point: {additive_fraction: discouraged, decimal_power_bucket: discouraged}
+
+  data_size:
+    default:
+      additive_fraction: discouraged
+      exact_collective: forbidden
+      decimal_power_bucket: allowed
+      decimal_base_rounding: preferred
+      upper_unit_jump_max: 1
+      lower_unit_jump_max: 1
+
+  data_rate:
+    default:
+      additive_fraction: discouraged
+      exact_collective: forbidden
+      decimal_power_bucket: allowed
+      decimal_base_rounding: preferred
+      upper_unit_jump_max: 1
+      lower_unit_jump_max: 1

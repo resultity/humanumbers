@@ -1,0 +1,35 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: ar
+  name: Standard Arabic
+  native_name: العربية
+  scripts: [Arab]
+model: split_core_language
+basic_aliases:
+  exact.pair: [زوج, زوجان]
+  fraction.tenth: [عشر, عُشر]
+  fraction.quarter: [ربع]
+  fraction.third: [ثلث]
+  fraction.half: [نصف]
+  fraction.three_quarters: [ثلاثة أرباع]
+  exact_group.dozen: [دزينة]
+  scale_bucket.tens: [عشرات]
+  scale_bucket.hundreds: [مئات]
+  scale_bucket.thousands: [آلاف]
+  scale_base.thousand: [ألف]
+  scale_base.ten_thousand: [عشرة آلاف]
+  scale_base.million: [مليون, ملايين]
+composition:
+  order: [left, right]
+  joiners:
+    multiplier_on_scale_base: []
+    bucket_on_scale_base: []
+    multiplier_on_unit: [من]
+    bucket_on_unit: []
+  starter_examples:
+    - surface: مئات الآلاف
+      rule: bucket_on_scale_base
+      left_id: scale_bucket.hundreds
+      right_key: scale_base.thousand

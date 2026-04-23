@@ -1,0 +1,35 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: zh
+  name: Mandarin Chinese
+  native_name: 中文
+  scripts: [Hans]
+model: split_core_language
+basic_aliases:
+  exact.pair: [一对, 两个]
+  fraction.tenth: [十分之一]
+  fraction.quarter: [四分之一]
+  fraction.third: [三分之一]
+  fraction.half: [半, 二分之一]
+  fraction.three_quarters: [四分之三]
+  exact_group.dozen: [一打]
+  scale_bucket.tens: [几十, 数十]
+  scale_bucket.hundreds: [几百, 数百]
+  scale_bucket.thousands: [几千, 数千]
+  scale_base.thousand: [千]
+  scale_base.ten_thousand: [万]
+  scale_base.million: [百万]
+composition:
+  order: [left, right]
+  joiners:
+    multiplier_on_scale_base: []
+    bucket_on_scale_base: []
+    multiplier_on_unit: []
+    bucket_on_unit: []
+  starter_examples:
+    - surface: 几十万
+      rule: bucket_on_scale_base
+      left_id: scale_bucket.tens
+      right_key: scale_base.ten_thousand

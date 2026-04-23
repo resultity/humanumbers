@@ -1,0 +1,19 @@
+Rewrite the source into exactly one polished English paragraph for a product page.
+
+Goal:
+- Increase the probability of clean, humanized numeric language.
+- This instruction set improves outcomes but does not guarantee perfect output.
+
+Requirements:
+- Preserve all key facts and directional meaning.
+- Keep SI units as the primary system.
+- Make phrasing less mechanical by using careful approximation where it helps readability (about, around, roughly, nearly, just under, just over).
+- Keep approximation conservative: do not over-round if it distorts practical meaning.
+- If the source includes a direct comparison pair (X versus Y), include at least one short conversational benchmark-style comparison.
+- Do not invent physical analogies, dramatic metaphors, or unsupported claims.
+- Do not add new entities, locations, causes, or forecasts not present in the source.
+- Return one paragraph only; no bullets, headings, or tables.
+
+Source text:
+
+{source_text}

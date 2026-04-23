@@ -1,0 +1,30 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: ur
+  name: Urdu
+  native_name: اردو
+  scripts: [Arab]
+pack_kind: function_word_dictionary
+notes:
+  - Grouped parser-facing words for approximation, bounds, ranges, prepositions, and neutral discourse noise.
+  - Intended to keep stop-token and synonym expansion outside named_values and unit policy packs.
+groups:
+  approximation: [تقریباً, قریب, قریباً, لگ بھگ, آس پاس, کے قریب, کے لگ بھگ, تقریباً اتنا, تقریباً اتنے, تقریباً یہی, کم و بیش, موٹے طور پر, اندازاً, تخمیناً, تقریبی طور پر, قریب قریب, تقریباً برابر, کچھ کم, کچھ زیادہ, حدوداً, ارد گرد, اندازے سے, قریب کے, تقریباً سطح پر, گویا قریب]
+  lower_bound: [کم از کم, کم سے کم, کم ترین, کم نہیں, سے کم نہیں, سے شروع, سے, سے اوپر, زیادہ, بیش از, اوپر, کم از کم اتنا, کم از کم اتنے, کم تر نہیں, کم سے کم سطح پر, ابتدا سے, شروع ہو کر, کم از کم حد, نیچے نہیں, حد اقل]
+  upper_bound: [زیادہ سے زیادہ, حد زیادہ, زیادہ نہیں, سے زیادہ نہیں, تک, سے کم, کم, نیچے, حد تک, اوپری حد, زیادہ سے اوپر نہیں, کم تر, زیادہ نہ ہو, زیادہ سے زیادہ اتنا, زیادہ سے زیادہ اتنے, حد میں, تک محدود, اوپر نہیں, حد بالا, تجاوز کے بغیر]
+  range: [کے درمیان, درمیان, سے, تک, سے لے کر, کے دائرے میں, کے اندر, کی حد میں, کے وقفے میں, تقریباً درمیان, تقریباً سے, تقریباً تک, پھیلا ہوا, محیط, میں واقع, کے بیچ, سے شروع ہو کر, تک پہنچتے ہوئے, اتار چڑھاؤ میں, حد کے اندر]
+  exactness: [ٹھیک, بالکل, درست, عین, ٹھیک ٹھیک, عین برابر, کے برابر, عین اسی, بالکل یہی, بالکل اتنا, بالکل اتنے, بعینہ, دقیق طور پر, صراحتاً, واضح طور پر, درست طور پر, بے خطا, ٹھیک سطح پر, عین موقع پر, مساوی]
+  connectors: [اور, نیز, ساتھ, کے ساتھ, سمیت, علاوہ, شامل کر کے, جمع کر کے, ملا کر, یا, یا پھر, ورنہ, بصورت دیگر, کے بجائے, کی جگہ, بمقابلہ, لیکن, مگر, تاہم, اگرچہ, جبکہ, پھر بھی, اس کے باوجود, علاوہ ازیں, ساتھ ہی]
+  prepositions: [میں, پر, سے, تک, کو, کے لئے, کیلئے, کے ساتھ, بغیر, اندر, باہر, اوپر, نیچے, درمیان, پاس, آس پاس, خلاف, مطابق, کے مطابق, بارے میں, متعلق, تحت, بعد, پہلے, دوران, ذریعے, وسیلے سے, نزدیک, گرد, ارد گرد, سامنے, پیچھے, اندرون, بیرون, طرف, جانب, اوپر سے, نیچے سے, ساتھ ساتھ, سوا]
+  discourse: [عام طور پر, عمومی طور پر, عموماً, عموما, اکثر, بنیادی طور پر, دراصل, حقیقت میں, اصولاً, اصولا, مجموعی طور پر, عملاً, عملا, مثال کے طور پر, مثلاً, مثلا, یعنی, خاص طور پر, بالخصوص, اوسطاً, اوسطا, مختصراً, اجمالاً, اجمالا, بڑی حد تک, ایک طرح سے, عمومی حالات میں, قاعدتاً, مختصر یہ کہ, عمومی طور سے]
+  additive_bucket_templates: ["{bucket_phrase} {connector} {remainder_quantity}", "{major} کچھ {unit_form}", "{major} سے اوپر {short_unit}"]
+  decimal_anchor_small_tail_words: [تھوڑا, ذرا سا, معمولی سا]
+  decimal_anchor_above_templates: ["{anchor_short} اور تھوڑا سا", "{anchor_words} اور {tail_descriptor}", "{anchor_short} سے کچھ اوپر"]
+  decimal_anchor_above_tail_templates: ["{anchor_words} اور {tail_text}", "{anchor_short} اور {tail_text}"]
+  decimal_anchor_below_templates: ["تقریباً {anchor_words}", "{anchor_words} سے ذرا کم", "{anchor_short} کے قریب"]
+  decimal_anchor_tail_templates: ["چند {bucket_text}", "{upper_tail}", "{rounded_tail}"]
+derived_sets:
+  composition.stop_token_groups: [approximation, prepositions, discourse]
+  comparison.bound_groups: [lower_bound, upper_bound, range, exactness]

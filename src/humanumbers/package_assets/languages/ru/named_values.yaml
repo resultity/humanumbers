@@ -1,0 +1,44 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: ru
+  name: Russian
+  native_name: Русский
+  scripts: [Cyrl]
+model: split_core_language
+basic_aliases:
+  exact.pair: [пара, пару]
+  exact.triple: [тройка, трое]
+  fraction.tenth: [десятая доля, десятая часть, одна десятая, одну десятую]
+  fraction.hundredth: [сотая доля, сотая часть, одна сотая, одну сотую]
+  fraction.thousandth: [тысячная доля, тысячная часть, одна тысячная, одну тысячную]
+  fraction.quarter: [четверть, четверти, одну четверть]
+  fraction.third: [треть, трети, одну треть]
+  fraction.half: [половина, половины, половину]
+  fraction.three_quarters: [три четверти]
+  exact_group.dozen: [дюжина, дюжины, дюжину, дюжин]
+  exact_group.score: [двадцатка]
+  scale_bucket.tens: [десятки, десятков]
+  scale_bucket.hundreds: [сотни, сотен]
+  scale_bucket.thousands: [тысячи, тысяч]
+  scale_bucket.millions: [миллионы, миллионов]
+  scale_bucket.billions: [миллиарды, миллиардов]
+  scale_base.thousand: [тысяча, тысячи, тысяч]
+  scale_base.ten_thousand: [десять тысяч]
+  scale_base.million: [миллион, миллиона, миллионов]
+  scale_base.billion: [миллиард, миллиарда, миллиардов]
+bound_basic_aliases:
+  fraction.half: [пол]
+composition:
+  order: [left, right]
+  joiners:
+    multiplier_on_scale_base: []
+    bucket_on_scale_base: []
+    multiplier_on_unit: []
+    bucket_on_unit: []
+  stop_token_groups: [approximation, prepositions, discourse]
+notes:
+  - "`пол` is a bound colloquial form and should only match before a unit or counted noun."
+  - Plural million and billion forms are intentionally present both as scale bases and vague buckets; runtime should prefer scale base when a preceding numeric multiplier exists.
+  - "Stop tokens are resolved from `function_words.yaml` so approximation markers and preposition synonyms can expand without editing this pack."

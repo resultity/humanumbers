@@ -1,0 +1,24 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: pt
+  name: Portuguese
+  native_name: Português
+  scripts: [Latn]
+pack_kind: function_word_dictionary
+notes:
+  - Grouped parser-facing words for approximation, bounds, ranges, prepositions, and neutral discourse noise.
+  - Intended to keep stop-token and synonym expansion outside named_values and unit policy packs.
+groups:
+  approximation: [cerca de, aproximadamente, aprox, por volta de, em torno de, ao redor de, quase, praticamente, virtualmente, mais ou menos, algo como, na casa de, da ordem de, pouco menos de, pouco mais de, perto de, pelos arredores de, em aproximadamente, grosso modo, em linhas gerais, por aí, uns, umas, à volta de, quase que]
+  lower_bound: [pelo menos, no mínimo, mínimo, a partir de, desde, acima de, mais de, superior a, não menos que, não inferior a, quando menos, com piso de, de no mínimo, partindo de, sem ficar abaixo de, maior que, acima do nível de, a contar de, desde pelo menos, a partir do mínimo]
+  upper_bound: [no máximo, no máximo de, máximo, até, menos de, inferior a, não mais que, não superior a, sem passar de, como muito, com teto de, abaixo de, por baixo de, até um máximo de, não acima de, limitado a, menor que, no topo de, até cerca de, sem exceder]
+  range: [entre, de, a, desde, até, na faixa de, no intervalo de, no patamar de, entre aproximadamente, de aproximadamente, até aproximadamente, variando de, oscilando entre, abrangendo de, dentro de uma faixa de, compreendido entre, ao longo de, do nível de, entre valores de, dentro da banda de]
+  exactness: [exatamente, precisamente, justamente, estritamente, igual a, equivale a, exatamente em, precisamente em, literalmente, concretamente, com exatidão, de modo exato, em termos exatos, bem em, justo em, no ponto exato de, sem desvio, em rigor, de forma precisa, com precisão]
+  connectors: [e, mais, com, junto com, assim como, além de, incluindo, somado a, adicionado a, em combinação com, ou, ou então, alternativamente, senão, em vez de, no lugar de, versus, contra, mas, porém, embora, enquanto, contudo, ainda assim, entretanto]
+  prepositions: [de, em, a, para, por, com, sem, desde, até, sobre, sob, entre, rumo a, contra, durante, mediante, segundo, após, antes de, dentro de, fora de, perto de, ao redor de, junto de, em frente a, acima de, abaixo de, acerca de, quanto a, conforme, via, por meio de, ao lado de, através de, diante de, atrás de, em torno de, perante, sem contar com, ao longo de]
+  discourse: [bem, em geral, geralmente, normalmente, usualmente, basicamente, simplesmente, realmente, principalmente, majoritariamente, no conjunto, na prática, no total, de fato, em princípio, por exemplo, isto é, ou seja, em particular, especialmente, sobretudo, em essência, em média, em linhas gerais, grosso modo, no fundo, na verdade, como regra, antes de tudo, por assim dizer]
+derived_sets:
+  composition.stop_token_groups: [approximation, prepositions, discourse]
+  comparison.bound_groups: [lower_bound, upper_bound, range, exactness]

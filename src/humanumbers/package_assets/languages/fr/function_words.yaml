@@ -1,0 +1,24 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: fr
+  name: French
+  native_name: Français
+  scripts: [Latn]
+pack_kind: function_word_dictionary
+notes:
+  - Grouped parser-facing words for approximation, bounds, ranges, prepositions, and neutral discourse noise.
+  - Intended to keep stop-token and synonym expansion outside named_values and unit policy packs.
+groups:
+  approximation: [environ, à peu près, approximativement, près de, autour de, aux alentours de, presque, quasiment, pratiquement, grosso modo, de l'ordre de, pas loin de, pas tout à fait, un peu moins de, un peu plus de, vers, dans les environs de, approximativement à, autour des, à vue de nez, pour ainsi dire, en gros, de manière approchée, aux environs de, plus ou moins]
+  lower_bound: [au moins, à partir de, dès, plus de, supérieur à, pas moins de, non inférieur à, au minimum, minimum, pour le moins, au bas mot, avec un plancher de, à compter de, au-delà de, au-dessus de, de plus de, sans descendre sous, au minimum de, plus grand que, en partant de]
+  upper_bound: [au plus, au maximum, maximum, jusqu'à, moins de, inférieur à, pas plus de, non supérieur à, sans dépasser, tout au plus, avec un plafond de, au-dessous de, sous, jusqu'à un maximum de, au plus haut, pas au-dessus de, limité à, moindre que, ne dépassant pas, au grand maximum]
+  range: [entre, de, à, depuis, jusqu'à, dans la plage de, dans l'intervalle de, dans la fourchette de, entre environ, de environ, à environ, compris entre, s'étendant de, allant de, variant de, oscillant entre, sur une plage de, dans un rayon de, entre approximativement, d'environ à]
+  exactness: [exactement, précisément, juste, strictement, égal à, équivaut à, exactement à, précisément à, littéralement, concrètement, de façon exacte, avec exactitude, en toute précision, juste à, tout juste, pile, pile à, net, au juste niveau de, sans écart]
+  connectors: [et, plus, avec, avec aussi, ainsi que, en plus de, y compris, ajouté à, combiné à, ou, soit, alternativement, autrement, sinon, au lieu de, plutôt que, face à, versus, contre, mais, cependant, bien que, tandis que, pourtant, néanmoins]
+  prepositions: [de, en, à, pour, par, avec, sans, depuis, jusqu'à, sur, sous, entre, vers, contre, durant, pendant, selon, après, avant, dans, hors de, près de, autour de, auprès de, le long de, à travers, au-dessus de, au-dessous de, au sein de, au sujet de, concernant, quant à, vis-à-vis de, via, grâce à, faute de, parmi, chez, envers, conformément à]
+  discourse: [en général, généralement, normalement, habituellement, essentiellement, simplement, réellement, surtout, principalement, globalement, dans l'ensemble, en pratique, au total, en fait, en principe, par exemple, notamment, c'est-à-dire, autrement dit, en particulier, avant tout, en moyenne, à grands traits, pour ainsi dire, en somme, au fond, en réalité, en règle générale, plus ou moins, dans l'ensemble des cas]
+derived_sets:
+  composition.stop_token_groups: [approximation, prepositions, discourse]
+  comparison.bound_groups: [lower_bound, upper_bound, range, exactness]

@@ -1,0 +1,35 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: pt
+  name: Portuguese
+  native_name: Português
+  scripts: [Latn]
+model: split_core_language
+basic_aliases:
+  exact.pair: [par, um par]
+  fraction.tenth: [décimo, um décimo]
+  fraction.quarter: [quarto, um quarto]
+  fraction.third: [terço, um terço]
+  fraction.half: [metade, meio]
+  fraction.three_quarters: [três quartos]
+  exact_group.dozen: [dúzia, uma dúzia]
+  scale_bucket.tens: [dezenas]
+  scale_bucket.hundreds: [centenas]
+  scale_bucket.thousands: [milhares]
+  scale_base.thousand: [mil]
+  scale_base.ten_thousand: [dez mil]
+  scale_base.million: [milhão, milhões]
+composition:
+  order: [left, right]
+  joiners:
+    multiplier_on_scale_base: [de]
+    bucket_on_scale_base: [de]
+    multiplier_on_unit: [de]
+    bucket_on_unit: [de]
+  starter_examples:
+    - surface: centenas de milhares
+      rule: bucket_on_scale_base
+      left_id: scale_bucket.hundreds
+      right_key: scale_base.thousand

@@ -1,0 +1,154 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: ru
+  name: Russian
+  native_name: Русский
+  scripts: [Cyrl]
+pack_kind: unit_surface_lexicon
+notes:
+  - Compact parser-facing surface forms for Russian unit input.
+  - This is not a full morphology table; it only carries the forms needed by the current API prototype.
+
+units:
+  count:
+    family: count
+    aliases: [шт, штука, штуки, штук, штучка, штучки, единица, единицы, единиц]
+    render: {one: штука, few: штуки, many: штук, short: шт}
+  millimeter:
+    family: length
+    aliases: [мм, миллиметр, миллиметра, миллиметров, миллиметре]
+    render: {one: миллиметр, few: миллиметра, many: миллиметров, short: мм}
+  micrometer:
+    family: length
+    aliases: [мкм, микрометр, микрометра, микрометров, микрометре]
+    render: {one: микрометр, few: микрометра, many: микрометров, short: мкм}
+  nanometer:
+    family: length
+    aliases: [нм, нанометр, нанометра, нанометров, нанометре]
+    render: {one: нанометр, few: нанометра, many: нанометров, short: нм}
+  centimeter:
+    family: length
+    aliases: [см, сантиметр, сантиметра, сантиметров, сантиметре]
+    render: {one: сантиметр, few: сантиметра, many: сантиметров, short: см}
+  meter:
+    family: length
+    aliases: [м, метр, метра, метров, метре]
+    render: {one: метр, few: метра, many: метров, short: м}
+  kilometer:
+    family: length
+    aliases: [км, километр, километра, километров, километре]
+    render: {one: километр, few: километра, many: километров, short: км}
+  inch:
+    family: length
+    aliases: [дюйм, дюйма, дюймов, in]
+    render: {one: дюйм, few: дюйма, many: дюймов, short: дюйм}
+  foot:
+    family: length
+    aliases: [фут, фута, футов, ft]
+    render: {one: фут, few: фута, many: футов, short: фут}
+  mile:
+    family: length
+    aliases: [миля, мили, миль, mi]
+    render: {one: миля, few: мили, many: миль, short: миля}
+  gram:
+    family: mass
+    aliases: [г, гр, g, грамм, грамма, граммов, грам]
+    render: {one: грамм, few: грамма, many: граммов, short: г}
+  milligram:
+    family: mass
+    aliases: [мг, mg, миллиграмм, миллиграмма, миллиграммов, миллиграм]
+    render: {one: миллиграмм, few: миллиграмма, many: миллиграммов, short: мг}
+  kilogram:
+    family: mass
+    aliases: [кг, kg, килограмм, килограмма, килограммов, кило]
+    render: {one: килограмм, few: килограмма, many: килограммов, short: кг}
+  tonne:
+    family: mass
+    aliases: [т, тонна, тонны, тонн]
+    render: {one: тонна, few: тонны, many: тонн, short: т}
+  ounce:
+    family: mass
+    aliases: [унция, унции, унций, oz]
+    render: {one: унция, few: унции, many: унций, short: унция}
+  troy_ounce:
+    family: mass
+    aliases: [тройская унция, тройской унции, тройских унций]
+    render: {one: тройская унция, few: тройские унции, many: тройских унций, short: тр. унция}
+  carat:
+    family: mass
+    aliases: [карат, карата, каратов]
+    render: {one: карат, few: карата, many: каратов, short: карат}
+  pound:
+    family: mass
+    aliases: [фунт, фунта, фунтов, lb]
+    render: {one: фунт, few: фунта, many: фунтов, short: фунт}
+  second:
+    family: time
+    aliases: [секунда, секунды, секунд, сек, с]
+    render: {one: секунда, few: секунды, many: секунд, short: с}
+  millisecond:
+    family: time
+    aliases: [мс, ms, миллисекунда, миллисекунды, миллисекунд]
+    render: {one: миллисекунда, few: миллисекунды, many: миллисекунд, short: мс}
+  microsecond:
+    family: time
+    aliases: [мкс, микросекунда, микросекунды, микросекунд]
+    render: {one: микросекунда, few: микросекунды, many: микросекунд, short: мкс}
+  nanosecond:
+    family: time
+    aliases: [нс, наносекунда, наносекунды, наносекунд]
+    render: {one: наносекунда, few: наносекунды, many: наносекунд, short: нс}
+  minute:
+    family: time
+    aliases: [минута, минуты, минут, мин]
+    render: {one: минута, few: минуты, many: минут, short: мин}
+  hour:
+    family: time
+    aliases: [час, часа, часов, ч]
+    render: {one: час, few: часа, many: часов, short: ч}
+  day:
+    family: time
+    aliases: [день, дня, дней, дн, сутки, суток]
+    render: {one: день, few: дня, many: дней, short: день}
+  week:
+    family: time
+    aliases: [неделя, недели, недель, нед]
+    render: {one: неделя, few: недели, many: недель, short: нед}
+  month:
+    family: time
+    aliases: [месяц, месяца, месяцев, мес]
+    render: {one: месяц, few: месяца, many: месяцев, short: мес}
+  year:
+    family: time
+    aliases: [год, года, лет]
+    render: {one: год, few: года, many: лет, short: год}
+  decade:
+    family: time
+    aliases: [десятилетие, десятилетия, десятилетий, десяток лет, десятка лет]
+    render: {one: десятилетие, few: десятилетия, many: десятилетий, short: десятилетие}
+  century:
+    family: time
+    aliases: [век, века, веков, столетие, столетия, столетий]
+    render: {one: век, few: века, many: веков, short: век}
+  millennium:
+    family: time
+    aliases: [тысячелетие, тысячелетия, тысячелетий]
+    render: {one: тысячелетие, few: тысячелетия, many: тысячелетий, short: тысячелетие}
+  milliliter:
+    family: volume
+    aliases: [мл, ml, миллилитр, миллилитра, миллилитров]
+    render: {one: миллилитр, few: миллилитра, many: миллилитров, short: мл}
+  liter:
+    family: volume
+    aliases: [л, литр, литра, литров]
+    render: {one: литр, few: литра, many: литров, short: л}
+  percent:
+    family: percentage
+    aliases: ['%', процент, процента, процентов]
+    render: {one: процент, few: процента, many: процентов, short: '%'}
+  basis_point:
+    family: percentage
+    aliases: [бп, б.п., базисный пункт, базисных пунктов]
+    render: {one: базисный пункт, few: базисных пункта, many: базисных пунктов, short: бп}

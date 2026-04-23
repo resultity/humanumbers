@@ -1,0 +1,33 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: fr
+  name: French
+pack_kind: benchmark_word_dictionary
+bands:
+  - [de la poussière, presque rien, un niveau trace]
+  - [une trace, à peine visible, juste un soupçon]
+  - [des miettes, trois fois rien, des restes]
+  - [une toute petite part, juste un filet, très peu]
+  - [une part minuscule, presque rien du tout, bien peu]
+  - [une petite part, un peu, plutôt peu]
+  - [une part modeste, plutôt bas, pas tant que ça]
+  - [à peu près un tiers, autour d'un tiers, comme un tiers]
+  - [moins de la moitié, presque la moitié, pas tout à fait la moitié]
+  - [un peu en dessous, légèrement en dessous, juste en deçà]
+  - [à peu près pareil, presque au niveau, dans les mêmes eaux]
+  - [un peu au-dessus, légèrement au-dessus, juste au-dessus]
+  - [un peu plus, modestement au-dessus, quelque peu plus]
+  - [nettement plus, clairement au-dessus, déjà plus haut]
+  - [beaucoup plus, bien au-dessus, sensiblement plus]
+  - [plusieurs fois plus, plusieurs fois au-dessus, à plusieurs reprises plus]
+  - [énorme, déjà beaucoup, avec une bonne marge]
+  - [immense, très grand, avec une grosse marge]
+  - [colossal, gigantesque, démesuré]
+  - [extrême, carrément excessif, très au-delà]
+  - [hors échelle, hors de toute mesure, complètement démesuré]
+register_modifiers:
+  colloquial: [franchement, carrément, plutôt, vraiment, quasiment, déjà, en gros, limite]
+  rough: [à la louche, cash, brut de décoffrage, sans détour, franchement, carrément, direct, sec]
+  profane: [putain, bordel, merde, nom de Dieu, foutrement, sacré bordel]

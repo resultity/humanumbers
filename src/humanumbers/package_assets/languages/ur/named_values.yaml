@@ -1,0 +1,35 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: ur
+  name: Urdu
+  native_name: اردو
+  scripts: [Arab]
+model: split_core_language
+basic_aliases:
+  exact.pair: [جوڑا, ایک جوڑا]
+  fraction.tenth: [دسواں حصہ, ایک دسواں]
+  fraction.quarter: [چوتھائی, ایک چوتھائی]
+  fraction.third: [تہائی, ایک تہائی]
+  fraction.half: [آدھا]
+  fraction.three_quarters: [تین چوتھائی]
+  exact_group.dozen: [درجن, ایک درجن]
+  scale_bucket.tens: [دسیوں]
+  scale_bucket.hundreds: [سیکڑوں]
+  scale_bucket.thousands: [ہزاروں]
+  scale_base.thousand: [ہزار]
+  scale_base.ten_thousand: [دس ہزار]
+  scale_base.million: [ملین]
+composition:
+  order: [left, right]
+  joiners:
+    multiplier_on_scale_base: []
+    bucket_on_scale_base: []
+    multiplier_on_unit: [کا, کے, کی]
+    bucket_on_unit: [کا, کے, کی]
+  starter_examples:
+    - surface: سیکڑوں ہزار
+      rule: bucket_on_scale_base
+      left_id: scale_bucket.hundreds
+      right_key: scale_base.thousand

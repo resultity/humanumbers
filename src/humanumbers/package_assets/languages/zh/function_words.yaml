@@ -1,0 +1,24 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: zh
+  name: Mandarin Chinese
+  native_name: 中文
+  scripts: [Hans]
+pack_kind: function_word_dictionary
+notes:
+  - Grouped parser-facing words for approximation, bounds, ranges, prepositions, and neutral discourse noise.
+  - Intended to keep stop-token and synonym expansion outside named_values and unit policy packs.
+groups:
+  approximation: [大约, 大概, 约, 约莫, 左右, 上下, 近, 接近, 将近, 快到, 差不多, 约略, 粗略, 粗估, 估计, 估摸, 大致, 大体, 基本上, 几乎, 近乎, 约有, 大约有, 约在, 差不离]
+  lower_bound: [至少, 起码, 最少, 不少于, 不低于, 不小于, 以上, 超过, 多于, 高于, 大于, 从, 自, 起, 起码有, 至少有, 不下于, 起步于, 超出, 高过]
+  upper_bound: [至多, 最多, 不超过, 不高于, 不大于, 以下, 以内, 少于, 低于, 小于, 截至, 上限为, 封顶, 不多于, 最高, 最多有, 不会超过, 至高, 至多有, 控制在]
+  range: [介于, 从, 到, 直到, 之间, 在范围内, 在区间内, 区间内, 范围内, 约从, 约到, 横跨, 跨度为, 波动于, 落在, 分布在, 自至, 自到, 介乎, 跨越]
+  exactness: [正好, 恰好, 恰巧, 刚好, 确切地, 精确地, 精准地, 严格地, 恰为, 等于, 相当于, 精确到, 准确地, 准确为, 确定为, 明确为, 正是, 丝毫不差, 分毫不差, 准确无误]
+  connectors: [和, 与, 及, 加, 加上, 连同, 外加, 以及, 还有, 包括, 或, 或者, 抑或, 否则, 另外, 改为, 而不是, 代替, 对比, 相对, 但, 但是, 然而, 不过, 同时]
+  prepositions: [在, 于, 从, 自, 到, 向, 往, 朝, 给, 为, 按, 以, 用, 由, 依, 对, 对于, 关于, 按照, 根据, 借助, 通过, 经, 沿着, 围绕, 靠近, 在内, 之内, 之外, 之上, 之下, 之前, 之后, 期间, 当中, 其中, 之间, 附近, 针对, 至于]
+  discourse: [一般来说, 通常, 往往, 常常, 基本上, 实际上, 事实上, 原则上, 总体上, 整体来看, 简单说, 简单地说, 也就是说, 换句话说, 比如, 例如, 尤其, 特别, 主要, 大体上, 从总体上看, 平均来看, 严格来说, 粗略地说, 从实践看, 通常情况下, 在多数情况下, 本质上, 概括地说, 总的来说]
+derived_sets:
+  composition.stop_token_groups: [approximation, prepositions, discourse]
+  comparison.bound_groups: [lower_bound, upper_bound, range, exactness]

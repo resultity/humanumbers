@@ -1,0 +1,33 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: es
+  name: Spanish
+pack_kind: benchmark_word_dictionary
+bands:
+  - [polvo, casi nada, nivel traza]
+  - [un rastro, apenas se nota, solo un indicio]
+  - [migajas, restos mínimos, casi nada]
+  - [una fracción mínima, apenas una pizca, muy poco]
+  - [una parte muy pequeña, casi nada de nada, muy poca cosa]
+  - [una parte pequeña, un poco, algo escaso]
+  - [una parte modesta, tirando a poco, no es tanto]
+  - [más o menos un tercio, alrededor de un tercio, como un tercio]
+  - [menos de la mitad, casi la mitad, no llega a la mitad]
+  - [un poco por debajo, algo por debajo, se queda un poco corto]
+  - [más o menos lo mismo, casi al nivel, prácticamente igual]
+  - [un poco por encima, algo por encima, apenas por arriba]
+  - [algo más, un poco más, moderadamente por encima]
+  - [bastante más, claramente por encima, ya se nota más]
+  - [mucho más, muy por encima, bastante más alto]
+  - [varias veces más, muchas veces más, en múltiplos]
+  - [un montón, ya es mucho, con bastante margen]
+  - [enorme, muy grande, con mucho margen]
+  - [colosal, descomunal, gigantesco]
+  - [extremo, pasadísimo, muy por encima]
+  - [fuera de escala, fuera de toda medida, totalmente desbordado]
+register_modifiers:
+  colloquial: [ya, más bien, realmente, bastante, casi, de hecho, la verdad, tirando a]
+  rough: [siendo brutos, en bruto, tal cual, directamente, sin vueltas, a lo bestia, a saco, sin filtro]
+  profane: [joder, carajo, hostia, maldita sea, de mierda, demonios]

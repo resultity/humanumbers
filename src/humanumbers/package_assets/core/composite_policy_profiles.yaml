@@ -1,0 +1,75 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+profiles:
+  count_plain:
+    additive_fraction: allowed
+    exact_collective: preferred
+    decimal_power_bucket: preferred
+    decimal_base_rounding: preferred
+    upper_unit_jump_max: 0
+    lower_unit_jump_max: 0
+    preserve_input_system_default: true
+
+  dense_metric_measure:
+    additive_fraction: preferred
+    exact_collective: forbidden
+    decimal_power_bucket: preferred
+    decimal_base_rounding: preferred
+    upper_unit_jump_max: 1
+    lower_unit_jump_max: 1
+    preserve_input_system_default: false
+
+  large_metric_measure:
+    additive_fraction: allowed
+    exact_collective: forbidden
+    decimal_power_bucket: preferred
+    decimal_base_rounding: preferred
+    upper_unit_jump_max: 1
+    lower_unit_jump_max: 0
+    preserve_input_system_default: false
+
+  imperial_human_length:
+    additive_fraction: preferred
+    exact_collective: forbidden
+    decimal_power_bucket: allowed
+    decimal_base_rounding: allowed
+    upper_unit_jump_max: 1
+    lower_unit_jump_max: 0
+    preserve_input_system_default: true
+
+  fine_time_measure:
+    additive_fraction: discouraged
+    exact_collective: forbidden
+    decimal_power_bucket: discouraged
+    decimal_base_rounding: preferred
+    upper_unit_jump_max: 1
+    lower_unit_jump_max: 1
+    preserve_input_system_default: false
+
+  coarse_calendar_time:
+    additive_fraction: preferred
+    exact_collective: allowed
+    decimal_power_bucket: discouraged
+    decimal_base_rounding: allowed
+    upper_unit_jump_max: 1
+    lower_unit_jump_max: 0
+    preserve_input_system_default: false
+
+  percentage_ratio:
+    additive_fraction: preferred
+    exact_collective: forbidden
+    decimal_power_bucket: allowed
+    decimal_base_rounding: preferred
+    upper_unit_jump_max: 0
+    lower_unit_jump_max: 0
+    preserve_input_system_default: true
+
+  engineering_signal:
+    additive_fraction: discouraged
+    exact_collective: forbidden
+    decimal_power_bucket: discouraged
+    decimal_base_rounding: preferred
+    upper_unit_jump_max: 1
+    lower_unit_jump_max: 1
+    preserve_input_system_default: false

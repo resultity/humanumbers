@@ -1,0 +1,35 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+language:
+  code: bn
+  name: Bengali
+  native_name: বাংলা
+  scripts: [Beng]
+model: split_core_language
+basic_aliases:
+  exact.pair: [জোড়া, এক জোড়া]
+  fraction.tenth: [দশমাংশ, এক দশমাংশ]
+  fraction.quarter: [চতুর্থাংশ, এক চতুর্থাংশ, সিকি]
+  fraction.third: [তৃতীয়াংশ, এক তৃতীয়াংশ]
+  fraction.half: [অর্ধেক]
+  fraction.three_quarters: [তিন চতুর্থাংশ]
+  exact_group.dozen: [ডজন]
+  scale_bucket.tens: [দশকয়েক, কয়েক দশ]
+  scale_bucket.hundreds: [কয়েকশো, শত শত]
+  scale_bucket.thousands: [কয়েক হাজার, হাজার হাজার]
+  scale_base.thousand: [হাজার]
+  scale_base.ten_thousand: [দশ হাজার]
+  scale_base.million: [মিলিয়ন]
+composition:
+  order: [left, right]
+  joiners:
+    multiplier_on_scale_base: []
+    bucket_on_scale_base: []
+    multiplier_on_unit: []
+    bucket_on_unit: []
+  starter_examples:
+    - surface: কয়েক হাজার
+      rule: bucket_on_scale_base
+      left_id: scale_bucket.thousands
+      right_key: scale_base.thousand

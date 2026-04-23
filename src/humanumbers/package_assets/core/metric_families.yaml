@@ -1,0 +1,253 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 2
+pack_kind: metric_families
+notes:
+  - Families define normalized unit ladders, not language-specific wordforms.
+  - Generated SI-prefixed units and injected non-SI units must be merged and sorted by relation to the SI canonical unit.
+  - "`preserve_input_system_default` means whether rounding should usually stay in the incoming unit system if possible."
+
+families:
+  count:
+    family_type: auxiliary
+    canonical_si_unit: count
+    units:
+      - unit: count
+        relation_to_si: {kind: exact_factor, factor: 1}
+        system: abstract
+        composite_profile: count_plain
+        preserve_input_system_default: true
+
+  length:
+    family_type: measurement
+    canonical_si_unit: meter
+    prefix_generation:
+      base_unit: meter
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [nano, micro, milli, centi, kilo]
+      generated_profile: dense_metric_measure
+    injected_units:
+      - {unit: inch, relation_to_si: {kind: exact_factor, factor: 0.0254}, system: imperial, composite_profile: imperial_human_length, preserve_input_system_default: true}
+      - {unit: foot, relation_to_si: {kind: exact_factor, factor: 0.3048}, system: imperial, composite_profile: imperial_human_length, preserve_input_system_default: true}
+      - {unit: yard, relation_to_si: {kind: exact_factor, factor: 0.9144}, system: imperial, composite_profile: imperial_human_length, preserve_input_system_default: true}
+      - {unit: mile, relation_to_si: {kind: exact_factor, factor: 1609.344}, system: imperial, composite_profile: imperial_human_length, preserve_input_system_default: true}
+      - {unit: nautical_mile, relation_to_si: {kind: exact_factor, factor: 1852}, system: nautical, composite_profile: imperial_human_length, preserve_input_system_default: true}
+
+  mass:
+    family_type: measurement
+    canonical_si_unit: kilogram
+    prefix_generation:
+      base_unit: gram
+      base_unit_factor_to_si: 0.001
+      prefix_set: si_full
+      preferred_human_prefixes: [milli, gram, kilo, mega]
+      generated_profile: dense_metric_measure
+    injected_units:
+      - {unit: ounce, relation_to_si: {kind: exact_factor, factor: 0.028349523125}, system: imperial, composite_profile: dense_metric_measure, preserve_input_system_default: true}
+      - {unit: troy_ounce, relation_to_si: {kind: exact_factor, factor: 0.0311034768}, system: imperial_troy, composite_profile: dense_metric_measure, preserve_input_system_default: true}
+      - {unit: pound, relation_to_si: {kind: exact_factor, factor: 0.45359237}, system: imperial, composite_profile: dense_metric_measure, preserve_input_system_default: true}
+      - {unit: carat, relation_to_si: {kind: exact_factor, factor: 0.0002}, system: gemological, composite_profile: engineering_signal, preserve_input_system_default: true}
+      - {unit: tonne, relation_to_si: {kind: exact_factor, factor: 1000}, system: metric, composite_profile: large_metric_measure, preserve_input_system_default: false}
+
+  time:
+    family_type: measurement
+    canonical_si_unit: second
+    prefix_generation:
+      base_unit: second
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [nano, micro, milli]
+      generated_profile: fine_time_measure
+    injected_units:
+      - {unit: minute, relation_to_si: {kind: exact_factor, factor: 60}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: hour, relation_to_si: {kind: exact_factor, factor: 3600}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: day, relation_to_si: {kind: exact_factor, factor: 86400}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: week, relation_to_si: {kind: exact_factor, factor: 604800}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: month, relation_to_si: {kind: approximate_factor, factor: 2592000, approx_days: [28, 29, 30, 31]}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: year, relation_to_si: {kind: approximate_factor, factor: 31536000, approx_days: [365, 366]}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: decade, relation_to_si: {kind: approximate_factor, factor: 315360000, approx_days: [3652, 3653]}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: century, relation_to_si: {kind: approximate_factor, factor: 3153600000, approx_days: [36524, 36525]}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+      - {unit: millennium, relation_to_si: {kind: approximate_factor, factor: 31536000000, approx_days: [365242, 365250]}, system: calendar, composite_profile: coarse_calendar_time, preserve_input_system_default: false}
+
+  area:
+    family_type: measurement
+    canonical_si_unit: square_meter
+    prefix_generation:
+      base_unit: square_meter
+      base_unit_factor_to_si: 1
+      prefix_set: si_decimal_small_to_large
+      preferred_human_prefixes: [centi, kilo]
+      generated_profile: dense_metric_measure
+      prefix_behavior: squared
+    injected_units:
+      - {unit: hectare, relation_to_si: {kind: exact_factor, factor: 10000}, system: metric, composite_profile: large_metric_measure, preserve_input_system_default: false}
+      - {unit: acre, relation_to_si: {kind: exact_factor, factor: 4046.8564224}, system: imperial, composite_profile: large_metric_measure, preserve_input_system_default: true}
+
+  volume:
+    family_type: measurement
+    canonical_si_unit: cubic_meter
+    prefix_generation:
+      base_unit: liter
+      base_unit_factor_to_si: 0.001
+      prefix_set: si_full
+      preferred_human_prefixes: [milli, centi, liter, kilo]
+      generated_profile: dense_metric_measure
+    injected_units:
+      - {unit: gallon, relation_to_si: {kind: exact_factor, factor: 0.003785411784}, system: imperial, composite_profile: dense_metric_measure, preserve_input_system_default: true}
+      - {unit: cubic_meter, relation_to_si: {kind: exact_factor, factor: 1}, system: si, composite_profile: large_metric_measure, preserve_input_system_default: false}
+
+  speed:
+    family_type: measurement
+    canonical_si_unit: meter_per_second
+    units:
+      - {unit: meter_per_second, relation_to_si: {kind: exact_factor, factor: 1}, system: si, composite_profile: engineering_signal, preserve_input_system_default: false}
+      - {unit: kilometer_per_hour, relation_to_si: {kind: exact_factor, factor: 0.2777777778}, system: metric, composite_profile: engineering_signal, preserve_input_system_default: false}
+      - {unit: mile_per_hour, relation_to_si: {kind: exact_factor, factor: 0.44704}, system: imperial, composite_profile: engineering_signal, preserve_input_system_default: true}
+      - {unit: knot, relation_to_si: {kind: exact_factor, factor: 0.5144444444}, system: nautical, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  acceleration:
+    family_type: measurement
+    canonical_si_unit: meter_per_second_squared
+    units:
+      - {unit: meter_per_second_squared, relation_to_si: {kind: exact_factor, factor: 1}, system: si, composite_profile: engineering_signal, preserve_input_system_default: false}
+      - {unit: g_force, relation_to_si: {kind: exact_factor, factor: 9.80665}, system: standard, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  temperature:
+    family_type: measurement
+    canonical_si_unit: kelvin
+    units:
+      - {unit: kelvin, relation_to_si: {kind: exact_factor, factor: 1}, system: si, composite_profile: engineering_signal, preserve_input_system_default: false}
+      - {unit: celsius, relation_to_si: {kind: affine, multiplier: 1, offset: 273.15}, system: metric, composite_profile: engineering_signal, preserve_input_system_default: true}
+      - {unit: fahrenheit, relation_to_si: {kind: affine, multiplier: 0.5555555556, offset: 255.3722222}, system: imperial, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  frequency:
+    family_type: measurement
+    canonical_si_unit: hertz
+    prefix_generation:
+      base_unit: hertz
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [kilo, mega, giga]
+      generated_profile: engineering_signal
+    injected_units:
+      - {unit: rpm, relation_to_si: {kind: exact_factor, factor: 0.0166666667}, system: rotational, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  force:
+    family_type: measurement
+    canonical_si_unit: newton
+    prefix_generation:
+      base_unit: newton
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [milli, kilo]
+      generated_profile: engineering_signal
+
+  pressure:
+    family_type: measurement
+    canonical_si_unit: pascal
+    prefix_generation:
+      base_unit: pascal
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [kilo, mega]
+      generated_profile: engineering_signal
+    injected_units:
+      - {unit: bar, relation_to_si: {kind: exact_factor, factor: 100000}, system: metric, composite_profile: engineering_signal, preserve_input_system_default: true}
+      - {unit: atmosphere, relation_to_si: {kind: exact_factor, factor: 101325}, system: standard, composite_profile: engineering_signal, preserve_input_system_default: true}
+      - {unit: psi, relation_to_si: {kind: exact_factor, factor: 6894.7572932}, system: imperial, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  energy:
+    family_type: measurement
+    canonical_si_unit: joule
+    prefix_generation:
+      base_unit: joule
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [kilo, mega]
+      generated_profile: engineering_signal
+    injected_units:
+      - {unit: watt_hour, relation_to_si: {kind: exact_factor, factor: 3600}, system: electrical, composite_profile: engineering_signal, preserve_input_system_default: true}
+      - {unit: kilowatt_hour, relation_to_si: {kind: exact_factor, factor: 3600000}, system: electrical, composite_profile: engineering_signal, preserve_input_system_default: true}
+      - {unit: calorie, relation_to_si: {kind: exact_factor, factor: 4.184}, system: thermal, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  power:
+    family_type: measurement
+    canonical_si_unit: watt
+    prefix_generation:
+      base_unit: watt
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [kilo, mega]
+      generated_profile: engineering_signal
+    injected_units:
+      - {unit: horsepower, relation_to_si: {kind: exact_factor, factor: 745.6998716}, system: imperial, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  current:
+    family_type: measurement
+    canonical_si_unit: ampere
+    prefix_generation:
+      base_unit: ampere
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [milli]
+      generated_profile: engineering_signal
+
+  voltage:
+    family_type: measurement
+    canonical_si_unit: volt
+    prefix_generation:
+      base_unit: volt
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [milli, kilo]
+      generated_profile: engineering_signal
+
+  resistance:
+    family_type: measurement
+    canonical_si_unit: ohm
+    prefix_generation:
+      base_unit: ohm
+      base_unit_factor_to_si: 1
+      prefix_set: si_full
+      preferred_human_prefixes: [kilo, mega]
+      generated_profile: engineering_signal
+
+  angle:
+    family_type: measurement
+    canonical_si_unit: radian
+    units:
+      - {unit: radian, relation_to_si: {kind: exact_factor, factor: 1}, system: si, composite_profile: engineering_signal, preserve_input_system_default: false}
+      - {unit: degree, relation_to_si: {kind: exact_factor, factor: 0.01745329252}, system: standard, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  data_size:
+    family_type: measurement
+    canonical_si_unit: byte
+    prefix_generation:
+      base_unit: byte
+      base_unit_factor_to_si: 1
+      prefix_set: si_large_only
+      preferred_human_prefixes: [kilo, mega, giga, tera]
+      generated_profile: engineering_signal
+    injected_units:
+      - {unit: bit, relation_to_si: {kind: exact_factor, factor: 0.125}, system: computing, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  data_rate:
+    family_type: measurement
+    canonical_si_unit: bit_per_second
+    prefix_generation:
+      base_unit: bit_per_second
+      base_unit_factor_to_si: 1
+      prefix_set: si_large_only
+      preferred_human_prefixes: [kilo, mega, giga]
+      generated_profile: engineering_signal
+    injected_units:
+      - {unit: byte_per_second, relation_to_si: {kind: exact_factor, factor: 8}, system: computing, composite_profile: engineering_signal, preserve_input_system_default: true}
+
+  percentage:
+    family_type: measurement
+    canonical_si_unit: percent
+    units:
+      - {unit: percent, relation_to_si: {kind: exact_factor, factor: 1}, system: ratio, composite_profile: percentage_ratio, preserve_input_system_default: true}
+      - {unit: basis_point, relation_to_si: {kind: exact_factor, factor: 0.01}, system: ratio, composite_profile: percentage_ratio, preserve_input_system_default: true}
+      - {unit: permille, relation_to_si: {kind: exact_factor, factor: 0.1}, system: ratio, composite_profile: percentage_ratio, preserve_input_system_default: true}

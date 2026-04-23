@@ -1,0 +1,33 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: pt
+  name: Portuguese
+pack_kind: benchmark_word_dictionary
+bands:
+  - [poeira, quase nada, nível residual]
+  - [um traço, mal aparece, só um sinal]
+  - [migalhas, restinho, quase nada]
+  - [uma fração minúscula, só um fiapo, muito pouco]
+  - [uma parte muito pequena, quase nada mesmo, pouquíssimo]
+  - [uma parte pequena, um pouco, meio baixo]
+  - [uma parte modesta, para menos, não é tanto]
+  - [mais ou menos um terço, algo como um terço, perto de um terço]
+  - [menos da metade, quase metade, não chega à metade]
+  - [um pouco abaixo, ligeiramente abaixo, fica um pouco curto]
+  - [quase o mesmo, praticamente no nível, mais ou menos igual]
+  - [um pouco acima, ligeiramente acima, só um pouco acima]
+  - [um pouco mais, moderadamente acima, algo acima]
+  - [bem mais, claramente acima, já passa bem]
+  - [muito mais, bastante acima, bem mais alto]
+  - [várias vezes mais, muitas vezes mais, em múltiplos]
+  - [um monte, já é bastante, com boa folga]
+  - [enorme, muito grande, com grande folga]
+  - [colossal, gigantesco, descomunal]
+  - [extremo, muito acima, exagerado]
+  - [fora da escala, fora de medida, completamente exagerado]
+register_modifiers:
+  colloquial: [já, bem, praticamente, de verdade, até, meio que, na prática, quase]
+  rough: [na real, bem por cima, sem rodeio, na lata, direto, bruto assim, de cara, seco]
+  profane: [porra, caramba, puta merda, droga, cacete, inferno]

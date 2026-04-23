@@ -1,0 +1,30 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: en
+  name: English
+  native_name: English
+  scripts: [Latn]
+pack_kind: function_word_dictionary
+notes:
+  - Grouped parser-facing words for approximation, bounds, ranges, prepositions, and neutral discourse noise.
+  - Intended to keep stop-token and synonym expansion outside named_values and unit policy packs.
+groups:
+  approximation: [about, around, approximately, approx, roughly, nearly, almost, close to, circa, more or less, on the order of, in the neighborhood of, practically, virtually, just under, just over, not far from, round about, roughly speaking, thereabout, or so, approximately at, close by, nearing, bordering on]
+  lower_bound: [at least, no less than, not less than, minimum, minimally, from, starting at, upwards of, over, above, more than, greater than, in excess of, beyond, and up, no fewer than, at a minimum, floor of, bottoming at, from at least]
+  upper_bound: [at most, no more than, not more than, maximum, maximally, up to, under, below, less than, fewer than, within, no higher than, capped at, limited to, and under, topping at, ceiling of, not above, no greater than, as much as]
+  range: [between, from, to, through, thru, until, till, ranging from, in the range of, anywhere between, from around, between roughly, from about, to about, within the span of, from roughly, between about, between approximately, across, spanning]
+  exactness: [exactly, precisely, strict, strictly, equal to, equals, equivalent to, identically, right at, exact, literally, specifically, specifically at, just, directly, squarely, dead on, at exactly, no more and no less, precisely at]
+  connectors: [and, plus, with, along with, as well as, together with, including, combined with, added to, in addition to, or, either, alternatively, otherwise, else, rather than, instead of, versus, vs, but, however, though, whereas, while, yet]
+  prepositions: [of, in, on, at, by, for, from, into, onto, over, under, within, outside, near, across, around, against, among, between, through, throughout, toward, towards, via, per, upon, about, before, after, during, since, until, till, without, with, amid, concerning, regarding, according to, alongside]
+  discourse: [well, so, now, basically, generally, typically, usually, commonly, simply, really, mostly, mainly, overall, in general, in practice, in total, in fact, in principle, kind of, sort of, namely, that is, i.e., e.g., for example, for instance, notably, especially, particularly, essentially]
+  additive_bucket_templates: ["{bucket_phrase} {connector} {remainder_quantity}", "{major}-ish {unit_form}", "{major} and change {unit_form}"]
+  decimal_anchor_small_tail_words: [a bit, a little, a touch]
+  decimal_anchor_above_templates: ["{anchor_short} and change", "{anchor_words} and a bit", "{anchor_words} plus {tail_descriptor}"]
+  decimal_anchor_above_tail_templates: ["{anchor_words} and {tail_text}", "{anchor_short} and {tail_text}"]
+  decimal_anchor_below_templates: ["almost {anchor_words}", "just shy of {anchor_words}", "nearly {anchor_short}"]
+  decimal_anchor_tail_templates: ["a few {bucket_text}", "{upper_tail}", "{rounded_tail}"]
+derived_sets:
+  composition.stop_token_groups: [approximation, prepositions, discourse]
+  comparison.bound_groups: [lower_bound, upper_bound, range, exactness]

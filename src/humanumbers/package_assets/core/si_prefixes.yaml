@@ -1,0 +1,52 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+prefixes:
+  nano:
+    symbol: n
+    power10: -9
+  micro:
+    symbol: u
+    unicode_symbol: μ
+    power10: -6
+  milli:
+    symbol: m
+    power10: -3
+  centi:
+    symbol: c
+    power10: -2
+  deci:
+    symbol: d
+    power10: -1
+  deka:
+    symbol: da
+    power10: 1
+  hecto:
+    symbol: h
+    power10: 2
+  kilo:
+    symbol: k
+    power10: 3
+  mega:
+    symbol: M
+    power10: 6
+  giga:
+    symbol: G
+    power10: 9
+  tera:
+    symbol: T
+    power10: 12
+  peta:
+    symbol: P
+    power10: 15
+  exa:
+    symbol: E
+    power10: 18
+  zetta:
+    symbol: Z
+    power10: 21
+
+prefix_sets:
+  si_full: [nano, micro, milli, centi, deci, deka, hecto, kilo, mega, giga, tera, peta, exa, zetta]
+  si_decimal_small_to_large: [milli, centi, deci, deka, hecto, kilo, mega, giga, tera, peta, exa, zetta]
+  si_large_only: [kilo, mega, giga, tera, peta, exa, zetta]

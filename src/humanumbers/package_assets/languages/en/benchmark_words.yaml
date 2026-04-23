@@ -1,0 +1,33 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+language:
+  code: en
+  name: English
+pack_kind: benchmark_word_dictionary
+bands:
+  - [dust, next to nothing, trace level]
+  - [a trace, barely there, just a hint]
+  - [crumbs, scraps, tiny leftovers]
+  - [a tiny fraction, just a sliver, very little]
+  - [a very small share, hardly any, not much at all]
+  - [a small share, a little, somewhat low]
+  - [a modest share, on the low side, not that much]
+  - [about a third, roughly a third, around one third]
+  - [under half, just under half, not quite half]
+  - [slightly under, a bit below, just shy]
+  - [about the same, roughly level, near level]
+  - [slightly over, a bit above, just over]
+  - [a little more, somewhat above, modestly above]
+  - [noticeably more, clearly above, solidly above]
+  - [much more, well above, substantially more]
+  - [several times more, multiple times more, many times over]
+  - [a lot, plenty more, with room to spare]
+  - [huge, way larger, very large]
+  - [colossal, massive, enormous]
+  - [extremely high, way over the top, extreme]
+  - [off the charts, beyond any scale, completely off scale]
+register_modifiers:
+  colloquial: [pretty much, really, honestly, basically, already, kinda, almost, more or less]
+  rough: [straight-up, flat-out, seriously, outright, bluntly, no joke, plain, deadass]
+  profane: [damn, fucking, bloody, holy hell, hell, goddamn]

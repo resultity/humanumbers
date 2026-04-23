@@ -1,0 +1,58 @@
+# Publication note: YAML asset pack for humanumbers.
+# Runtime/reference usage is documented in docs/yaml-asset-inventory.md.
+version: 1
+notes:
+  - Bridge policies define when a generic render may leave the source unit system.
+  - Missing or locked policies mean that the unit should stay inside its own measurement subdomain.
+
+families:
+  length:
+    imperial:
+      locked: false
+      preferred_target_units: [kilometer, meter]
+      min_human_value: 0.25
+      max_human_value: 250
+    nautical:
+      locked: false
+      preferred_target_units: [kilometer]
+      min_human_value: 0.25
+      max_human_value: 250
+
+  mass:
+    imperial:
+      locked: false
+      preferred_target_units: [kilogram, gram]
+      min_human_value: 0.2
+      max_human_value: 500
+    imperial_troy:
+      locked: true
+      preferred_target_units: []
+    gemological:
+      locked: true
+      preferred_target_units: []
+
+  area:
+    imperial:
+      locked: false
+      preferred_target_units: [hectare, square_meter, square_kilometer]
+      min_human_value: 0.1
+      max_human_value: 500
+
+  volume:
+    imperial:
+      locked: false
+      preferred_target_units: [liter, cubic_meter]
+      min_human_value: 0.1
+      max_human_value: 500
+
+  speed:
+    imperial:
+      locked: false
+      preferred_target_units: [kilometer_per_hour, meter_per_second]
+      min_human_value: 1
+      max_human_value: 500
+    nautical:
+      locked: false
+      preferred_target_units: [kilometer_per_hour]
+      min_human_value: 1
+      max_human_value: 500
