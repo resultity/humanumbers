@@ -90,7 +90,7 @@ HUMANUMBERS_CORS_ORIGINS=https://humanumbers.resultity.com
 For the split-domain production setup:
 
 - frontend: `https://humanumbers.resultity.com`
-- API: `https://api.humanumbers.resultity.com`
+- API: `https://api-humanumbers.resultity.com`
 
 ## Demos
 
